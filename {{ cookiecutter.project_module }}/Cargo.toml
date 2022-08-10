@@ -1,0 +1,13 @@
+[package]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.1.0"
+edition = "2021"
+authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
+
+[dependencies]
+{% if cookiecutter.project_type == "bin" -%}
+color-eyre = "0"
+{% endif -%}
+{% if cookiecutter.project_type == "lib" -%}
+thiserror = "1"
+{% endif -%}
